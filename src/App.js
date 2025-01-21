@@ -12,7 +12,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          this is auto deploy from jenkins pipeline.
+          Learn Jenkins on Udemy
         </a>
       </header>
       <p>
