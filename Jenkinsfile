@@ -25,12 +25,12 @@ pipeline {
             }
         }
         stage('Test') {
-            agent{
-                docker{
-                    image 'node:20-alpine'
-                    reuseNode true
-                }
-            }
+            // agent{
+            //     docker{
+            //         image 'node:20-alpine'
+            //         reuseNode true
+            //     }
+            // }
             steps {
                 echo 'Testing..'
                 sh '''
@@ -39,12 +39,12 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent{
-                docker{
-                    image 'node:20-alpine'
-                    reuseNode true
-                }
-            }
+            // agent{
+            //     docker{
+            //         image 'node:20-alpine'
+            //         reuseNode true
+            //     }
+            // }
             steps {
                 echo 'Deploying..'
                 sh '''
