@@ -50,8 +50,8 @@ pipeline {
                 sh '''
                     npm install netlify-cli --save-dev
 
-                    node_modules/netlify-cli/bin/run.js deploy --dir=build --prod
                 '''
+                // node_modules/netlify-cli/bin/run.js deploy --dir=build --prod
             }
         }
     }
