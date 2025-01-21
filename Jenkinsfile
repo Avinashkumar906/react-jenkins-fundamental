@@ -6,12 +6,16 @@ pipeline {
             agent{
                 docker{
                     image 'node:20-alpine'
+                    reuseNode true
                 }
             }
             steps {
                 echo 'Building..'
                 sh '''
                     npm --version
+                    npm ci
+                    npm build
+                    ls -l
                 '''
             }
         }
