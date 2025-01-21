@@ -14,17 +14,32 @@ pipeline {
                 sh '''
                     npm --version
                     npm ci
-                    npm build
+                    npm run build
                     ls -l
                 '''
             }
         }
         stage('Test') {
+            agent{
+                docker{
+                    image 'node:20-alpine'
+                    reuseNode true
+                }
+            }
             steps {
-                echo 'Testing pipeline auto trigger..'
+                echo 'Testing..'
+                sh '''
+                    npm run test
+                '''
             }
         }
         stage('Deploy') {
+            agent{
+                docker{
+                    image 'node:20-alpine'
+                    reuseNode true
+                }
+            }
             steps {
                 echo 'Deploying....'
             }
